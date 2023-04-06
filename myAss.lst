@@ -1,0 +1,82 @@
+MPASM  5.50                         MYASS.ASM   3-29-2023  20:59:51         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0000   3007           00001     movlw 07h
+0001   009F           00002     movwf 1fh
+0002   1683           00003     bsf 03h,5 
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0003   1685           00004     bsf 85h,5 ; Move to bank 1
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0004   1585           00005     bsf 85h,3 ; set RA3 as input 
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0005   1486           00006     bsf 86h,1 ; set RB1 as input 
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0006   1386           00007     bcf 86h,7 ; set RB7 as output
+0007   1283           00008     bcf 03h,5 ; Go to bank 0 
+                      00009 
+0008                  00010 start
+0008   1D85           00011     btfss 05h,3 ; Testing RA3
+0009   280D           00012     goto check_rb1
+                      00013     
+000A   1C86           00014     btfss 06h,1 ; Testing RB1
+000B   2810           00015     goto check_ra3
+                      00016     
+000C   2815           00017     goto buttons_open_or_closed ; Both buttons are open or closed
+                      00018     
+000D                  00019 check_rb1
+000D   1886           00020     btfsc 06h,1 ; Testing RB1
+000E   2813           00021     goto led_on ; RB1 is pressed
+                      00022     
+000F   2815           00023     goto buttons_open_or_closed ; RA3 is pressed or both buttons are open
+                      00024     
+0010                  00025 check_ra3
+0010   1985           00026     btfsc 05h,3 ; Testing RA3
+0011   2813           00027     goto led_on ; RA3 is pressed
+                      00028     
+0012   2815           00029     goto buttons_open_or_closed ; RB1 is pressed or both buttons are open
+                      00030 
+0013                  00031 led_on
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0013   1786           00032     bsf 86h,7 ; Turn on RB7
+0014   2808           00033     goto start
+                      00034 
+0015                  00035 buttons_open_or_closed
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0015   1386           00036     bcf 86h,7 ; Turn off RB7
+0016   2808           00037     goto start
+                      00038 
+Warning[205]: Found directive in column 1. (END)
+                      00039 END
+MPASM  5.50                         MYASS.ASM   3-29-2023  20:59:51         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__16F627                          00000001
+__DEBUG                           1
+buttons_open_or_closed            00000015
+check_ra3                         00000010
+check_rb1                         0000000D
+led_on                            00000013
+start                             00000008
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXX--------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    23
+Program Memory Words Free:  1001
+
+
+Errors   :     0
+Warnings :     1 reported,     0 suppressed
+Messages :     6 reported,     0 suppressed
+
+

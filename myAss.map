@@ -1,0 +1,39 @@
+MPLINK 4.48, Linker
+Linker Map File - Created Wed Mar 29 20:59:53 2023
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x00002e
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000016      
+            23 out of 1158 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+   buttons_open_or_closed   0x000015    program     static C:\Users\Dell\OneDrive\Documents\CAO216D\myAss.asm
+                check_ra3   0x000010    program     static C:\Users\Dell\OneDrive\Documents\CAO216D\myAss.asm
+                check_rb1   0x00000d    program     static C:\Users\Dell\OneDrive\Documents\CAO216D\myAss.asm
+                   led_on   0x000013    program     static C:\Users\Dell\OneDrive\Documents\CAO216D\myAss.asm
+                    start   0x000008    program     static C:\Users\Dell\OneDrive\Documents\CAO216D\myAss.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    start   0x000008    program     static C:\Users\Dell\OneDrive\Documents\CAO216D\myAss.asm
+                check_rb1   0x00000d    program     static C:\Users\Dell\OneDrive\Documents\CAO216D\myAss.asm
+                check_ra3   0x000010    program     static C:\Users\Dell\OneDrive\Documents\CAO216D\myAss.asm
+                   led_on   0x000013    program     static C:\Users\Dell\OneDrive\Documents\CAO216D\myAss.asm
+   buttons_open_or_closed   0x000015    program     static C:\Users\Dell\OneDrive\Documents\CAO216D\myAss.asm
+
+
